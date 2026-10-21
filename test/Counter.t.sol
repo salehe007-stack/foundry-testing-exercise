@@ -66,10 +66,6 @@ contract CounterTest is Test {
     function testFuzz_SetNumber(uint256 x) public {
         counter.setNumber(x);
         assertEq(counter.number(), x);
-    }
-    
-function test_BrokenForCi() public {
-    assertEq(1, 2); // Will fail
 }
     // Fork tests
     function test_Fork_ReadFromMainnetCounter() public {
