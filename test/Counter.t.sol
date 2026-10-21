@@ -95,7 +95,7 @@ contract CounterTest is Test {
         address pair = 0xB4e16d0168e52d35CaCD2c6185b44281Ec28C9Dc;
 
         IUniswapV2Pair uniswapPair = IUniswapV2Pair(pair);
-        (uint112 reserve0, uint112 reserve1, ) = uniswapPair.getReserves();
+        (uint112 reserve0, uint112 reserve1,) = uniswapPair.getReserves();
 
         console2.log("Reserve 0 (USDC):", reserve0);
         console2.log("Reserve 1 (WETH):", reserve1);
