@@ -67,7 +67,10 @@ contract CounterTest is Test {
         counter.setNumber(x);
         assertEq(counter.number(), x);
     }
-
+    
+function test_BrokenForCi() public {
+    assertEq(1, 2); // Will fail
+}
     // Fork tests
     function test_Fork_ReadFromMainnetCounter() public {
         if (bytes(vm.envOr("MAINNET_RPC_URL", string(""))).length == 0) {
