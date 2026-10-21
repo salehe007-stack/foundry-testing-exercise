@@ -66,7 +66,8 @@ contract CounterTest is Test {
     function testFuzz_SetNumber(uint256 x) public {
         counter.setNumber(x);
         assertEq(counter.number(), x);
-}
+    }
+
     // Fork tests
     function test_Fork_ReadFromMainnetCounter() public {
         if (bytes(vm.envOr("MAINNET_RPC_URL", string(""))).length == 0) {
