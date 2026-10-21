@@ -68,13 +68,6 @@ contract CounterTest is Test {
         assertEq(counter.number(), x);
     }
 
-    // Intentionally broken
-    function test_BrokenIntentionally() public {
-        counter.setNumber(10);
-        console2.log("Number is:", counter.number());
-        assertEq(counter.number(), 11); // Wrong assertion
-    }
-
     // Fork tests
     function test_Fork_ReadFromMainnetCounter() public {
         if (bytes(vm.envOr("MAINNET_RPC_URL", string(""))).length == 0) {
